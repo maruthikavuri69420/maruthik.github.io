@@ -1,5 +1,400 @@
-<html>
-  <body>
-    <h1> Welcome to Maruthi's Portfilo</h1>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maruthi Kavuri | Portfolio</title>
+  <meta name="description" content="Dark neon portfolio of Maruthi Kavuri – student‑athlete & aspiring computer scientist."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0a0a0f;
+      --panel:#101018;
+      --panel-2:#0f1420;
+      --txt:#e6f6ff;
+      --muted:#9fb3c8;
+      --neon:#00e5ff;       /* cyan */
+      --neon-2:#ff3df0;     /* magenta */
+      --neon-3:#5fff7a;     /* green */
+      --shadow-cyan: 0 0 12px rgba(0,229,255,.6), 0 0 24px rgba(0,229,255,.35);
+      --shadow-mag: 0 0 12px rgba(255,61,240,.6), 0 0 24px rgba(255,61,240,.35);
+      --shadow-green: 0 0 12px rgba(95,255,122,.6), 0 0 24px rgba(95,255,122,.35);
+      --radius:18px;
+      --radius-lg:26px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--txt); background: radial-gradient(1200px 800px at 20% -10%, rgba(0,229,255,.12), transparent 55%),
+                        radial-gradient(900px 600px at 120% 20%, rgba(255,61,240,.12), transparent 60%),
+                        radial-gradient(1000px 700px at 50% 120%, rgba(95,255,122,.10), transparent 55%),
+                        var(--bg);
+      overflow-x:hidden;
+    }
+    a{color:var(--neon)}
+    /* NAV */
+    .nav{
+      position:fixed; inset:16px 16px auto 16px; display:flex; align-items:center; justify-content:space-between;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      padding:10px 16px; border:1px solid rgba(255,255,255,.08); border-radius:999px; backdrop-filter:blur(10px);
+      z-index:50;
+    }
+    .brand{display:flex; gap:10px; align-items:center; font-family:Orbitron, sans-serif; letter-spacing:.5px;}
+    .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--neon);box-shadow:var(--shadow-cyan)}
+    .brand span{font-weight:700}
+    .nav a{ text-decoration:none; color:var(--txt); opacity:.9 }
+    .links{display:flex; gap:14px; align-items:center}
+    .pill{padding:8px 14px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background:transparent}
+    .btn{padding:10px 16px; border-radius:999px; border:1px solid transparent; background:linear-gradient(90deg, var(--neon), var(--neon-2)); color:#001014; font-weight:700}
+    .btn:hover{filter:brightness(1.08)}
+    /* HERO */
+    header{position:relative; min-height:92vh; display:grid; place-items:center; padding:120px 20px 60px}
+    .hero{
+      width:min(1100px, 94vw); display:grid; grid-template-columns: 1.2fr .8fr; gap:28px; align-items:center;
+    }
+    @media (max-width: 900px){ .hero{grid-template-columns:1fr} }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.12); border-radius:var(--radius-lg); padding:26px; position:relative;
+    }
+    .glow-outline{box-shadow: var(--shadow-cyan)}
+    h1{
+      font-family:Orbitron, sans-serif; font-weight:800; font-size: clamp(34px, 6vw, 64px);
+      line-height:1.02; margin:0 0 10px; letter-spacing: .5px;
+      background: linear-gradient(90deg, var(--neon), var(--neon-2)); -webkit-background-clip:text; color:transparent;
+      text-shadow: 0 0 12px rgba(0,229,255,.25);
+    }
+    .tag{display:inline-block; padding:6px 10px; border:1px solid rgba(255,255,255,.12); border-radius:999px; margin-right:8px; font-size:13px; color:var(--muted)}
+    .lead{color:var(--muted); font-size: clamp(15px, 2.2vw, 18px); margin:14px 0 22px}
+    .cta{display:flex; flex-wrap:wrap; gap:12px}
+    .cta .ghost{border-color: rgba(0,229,255,.45); color:var(--neon)}
+    .hero-aside{display:grid; gap:14px}
+    .stat{
+      display:flex; gap:14px; align-items:center; padding:14px; border-radius:14px; background:linear-gradient(180deg, rgba(0,229,255,.08), rgba(0,229,255,.03));
+      border:1px solid rgba(0,229,255,.25);
+    }
+    .stat .num{font-family:Orbitron, sans-serif; font-weight:700; color:var(--neon)}
+
+    /* SECTION WRAPPER */
+    section{padding:60px 20px}
+    .wrap{width:min(1100px, 94vw); margin:0 auto}
+    .section-title{font-family:Orbitron,sans-serif; font-size: clamp(22px, 3vw, 30px); margin:0 0 16px}
+    .divider{height:2px; background:linear-gradient(90deg, transparent, var(--neon), var(--neon-2), transparent); border:none; margin:18px 0 26px}
+
+    /* SKILLS */
+    .skills{ display:grid; grid-template-columns: repeat(auto-fit, minmax(190px,1fr)); gap:14px }
+    .chip{padding:12px 14px; border-radius:12px; background:var(--panel); border:1px solid rgba(255,255,255,.08)}
+    .chip b{color:var(--neon)}
+
+    /* EXPERIENCE */
+    .timeline{display:grid; gap:14px}
+    .item{background:var(--panel-2); border:1px solid rgba(255,255,255,.08); padding:18px; border-radius:16px}
+    .item h4{margin:0 0 6px}
+    .meta{color:var(--muted); font-size:14px}
+    .badge{display:inline-block; padding:4px 8px; border-radius:999px; font-size:12px; border:1px solid rgba(255,255,255,.14); margin-right:6px; color:var(--muted)}
+
+    /* PROJECTS */
+    .grid{display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:16px}
+    .proj{
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.10);
+      border-radius:16px; overflow:hidden; position:relative; transition:transform .25s ease, box-shadow .25s ease;
+    }
+    .proj:hover{ transform:translateY(-4px); box-shadow: var(--shadow-green)}
+    .thumb{aspect-ratio: 16/9; background:linear-gradient(135deg, rgba(0,229,255,.18), rgba(255,61,240,.18));}
+    .proj .body{padding:14px 16px}
+    .stack{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0}
+    .stack span{font-size:12px; padding:4px 8px; border:1px solid rgba(255,255,255,.14); border-radius:999px; color:var(--muted)}
+    .actions{display:flex; gap:10px; margin-top:10px}
+    .btn-mini{font-size:13px; padding:8px 12px; border-radius:10px; border:1px solid rgba(255,255,255,.18); background:transparent; color:var(--txt)}
+    .btn-mini.primary{border-color:rgba(0,229,255,.5); color:var(--neon)}
+
+    /* CONTACT */
+    .contact{ display:grid; grid-template-columns:1.1fr .9fr; gap:16px }
+    @media (max-width: 900px){ .contact{grid-template-columns:1fr} }
+    input, textarea{
+      width:100%; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.14);
+      background:#0b0f17; color:var(--txt); outline:none;
+    }
+    textarea{min-height:120px; resize:vertical}
+    .send{margin-top:10px}
+
+    /* FOOTER */
+    footer{padding:34px 20px 60px; text-align:center; color:var(--muted)}
+
+    /* PARTICLES CANVAS */
+    #stars{position:fixed; inset:0; z-index:-1}
+  </style>
+</head>
+<body>
+  <canvas id="stars"></canvas>
+  <nav class="nav">
+    <div class="brand"><span class="dot"></span><span>Maruthi&nbsp;Kavuri</span></div>
+    <div class="links">
+      <a class="pill" href="#home">Home</a>
+      <a class="pill" href="#resume">Resume</a>
+      <a class="pill" href="#projects">Projects</a>
+      <a class="pill" href="#contact">Contact</a>
+      <a class="btn" href="https://www.linkedin.com/in/maruthi-kavuri-88a889357/" target="_blank" rel="noreferrer">LinkedIn</a>
+    </div>
+  </nav>
+
+  <!-- HERO / HOME -->
+  <header id="home">
+    <div class="hero">
+      <div class="card glow-outline">
+        <span class="tag">Student‑Athlete • Aspiring Computer Scientist</span>
+        <h1>Hi, I'm Maruthi.<br/>I build, I learn, I swim.</h1>
+        <p class="lead">Rising senior at Vernon Hills High School (IL). Varsity sprint freestyler and curious developer. I like shipping simple tools that solve real problems and leveling up one stroke, one commit at a time.</p>
+        <div class="cta">
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="pill ghost" href="#resume">See Resume</a>
+          <a class="pill ghost" href="mailto:pradyu.kavuri@gmail.com">Email Me</a>
+        </div>
+      </div>
+      <div class="hero-aside">
+        <div class="stat">
+          <div>
+            <div class="num">50.6</div>
+            <div class="meta">100‑yard freestyle (JR season)</div>
+          </div>
+        </div>
+        <div class="stat" style="border-color:rgba(255,61,240,.35); background:linear-gradient(180deg, rgba(255,61,240,.08), rgba(255,61,240,.03));">
+          <div>
+            <div class="num" style="color:var(--neon-2)">26.42</div>
+            <div class="meta">50 Free LCM</div>
+          </div>
+        </div>
+        <div class="stat" style="border-color:rgba(95,255,122,.35); background:linear-gradient(180deg, rgba(95,255,122,.08), rgba(95,255,122,.03));">
+          <div>
+            <div class="num" style="color:var(--neon-3)">11 AP</div>
+            <div class="meta">Completed by end of junior year (GPA 3.9 weighted)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- RESUME -->
+  <section id="resume">
+    <div class="wrap">
+      <h2 class="section-title">Resume</h2>
+      <hr class="divider"/>
+
+      <h3>Skills</h3>
+      <div class="skills">
+        <div class="chip"><b>Java</b> • AP CSA foundations, OOP, algorithms</div>
+        <div class="chip"><b>Python</b> • Scripting, automation, problem solving</div>
+        <div class="chip"><b>Web</b> • HTML/CSS/JS, responsive UI</div>
+        <div class="chip"><b>Collaboration</b> • Communication, peer mentoring</div>
+        <div class="chip"><b>Project</b> • Planning, iterative design, delivery</div>
+        <div class="chip"><b>Time mgmt</b> • Balancing academics & athletics</div>
+      </div>
+
+      <br/>
+      <h3>Experience & Activities</h3>
+      <div class="timeline">
+        <div class="item">
+          <h4>Varsity Swimmer – Vernon Hills High School</h4>
+          <div class="meta">2019 – Present · Sprint Freestyle</div>
+          <p>Dedicated training and competition in 50/100 free; consistent time drops (50.6 in 100‑yard free). Built resilience, focus, and team impact.</p>
+          <div>
+            <span class="badge">Discipline</span><span class="badge">Teamwork</span><span class="badge">Goal Setting</span>
+          </div>
+        </div>
+        <div class="item">
+          <h4>VHACK – Hackathon Participant</h4>
+          <div class="meta">Accessibility‑focused prototype · Learned perseverance</div>
+          <p>Contributed to an app concept improving digital accessibility. Didn’t place, but gained deep respect for iteration, late‑night debugging, and grit.</p>
+          <div><span class="badge">Hackathon</span><span class="badge">Prototype</span><span class="badge">Team Dev</span></div>
+        </div>
+        <div class="item">
+          <h4>Calico.CS (UC Berkeley) – Workshops & Community</h4>
+          <div class="meta">Exploration of AI/software topics & collaboration</div>
+          <p>Expanded fundamentals and best practices through sessions and peer community; applied takeaways to personal projects.</p>
+          <div><span class="badge">Learning</span><span class="badge">AI Topics</span><span class="badge">Community</span></div>
+        </div>
+        <div class="item">
+          <h4>Project Developer & Programmer</h4>
+          <div class="meta">2019 – Present</div>
+          <p>Built websites and prototype apps; participated in multiple coding competitions; mentored peers in AP CS concepts and problem solving.</p>
+          <div><span class="badge">Java</span><span class="badge">Python</span><span class="badge">Web</span></div>
+        </div>
+      </div>
+
+      <br/>
+      <h3>Education</h3>
+      <div class="item">
+        <h4>Vernon Hills High School – Vernon Hills, IL</h4>
+        <div class="meta">Class of 2025 · GPA 3.9 (weighted) · 11+ AP courses</div>
+        <p>AP CSA, AP Calculus BC, AP Physics, AP U.S. History, and more.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap">
+      <h2 class="section-title">Projects</h2>
+      <hr class="divider"/>
+
+      <div class="grid" id="projectGrid">
+        <!-- Example Project Card 1 -->
+        <article class="proj">
+          <div class="thumb" role="img" aria-label="Accessibility App thumbnail"></div>
+          <div class="body">
+            <h4>AccessEase (VHACK)</h4>
+            <p>Prototype app improving digital accessibility with quick‑toggle readability features.</p>
+            <div class="stack"><span>JavaScript</span><span>HTML/CSS</span><span>Hackathon</span></div>
+            <div class="actions">
+              <a class="btn-mini primary" href="#" onclick="alert('Add your GitHub repo link!')">GitHub</a>
+              <a class="btn-mini" href="#" onclick="alert('Add your live demo link!')">Live Demo</a>
+            </div>
+          </div>
+        </article>
+        <!-- Example Project Card 2 -->
+        <article class="proj">
+          <div class="thumb" role="img" aria-label="Memory tracker app thumbnail"></div>
+          <div class="body">
+            <h4>Memory Tracker</h4>
+            <p>Searchable journaling prototype that tags entries by mood/keywords for fast recall.</p>
+            <div class="stack"><span>Python</span><span>Flask</span><span>SQLite</span></div>
+            <div class="actions">
+              <a class="btn-mini primary" href="#" onclick="alert('Add your GitHub repo link!')">GitHub</a>
+              <a class="btn-mini" href="#" onclick="alert('Add your live demo link!')">Live Demo</a>
+            </div>
+          </div>
+        </article>
+        <!-- Example Project Card 3 -->
+        <article class="proj">
+          <div class="thumb" role="img" aria-label="Swim pace tool thumbnail"></div>
+          <div class="body">
+            <h4>Swim Pace Visualizer</h4>
+            <p>Web tool to visualize 25/50 splits and target pace using animated lane LEDs.</p>
+            <div class="stack"><span>JavaScript</span><span>Canvas</span></div>
+            <div class="actions">
+              <a class="btn-mini primary" href="#" onclick="alert('Add your GitHub repo link!')">GitHub</a>
+              <a class="btn-mini" href="#" onclick="alert('Add your live demo link!')">Live Demo</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <br/>
+      <div class="card">
+        <h4 style="margin:0 0 8px">Add New Project</h4>
+        <p class="meta">Edit the <code>projects</code> array in the script below or duplicate a card above. Everything is pure HTML/CSS/JS – perfect for GitHub Pages.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <h2 class="section-title">Contact</h2>
+      <hr class="divider"/>
+      <div class="contact">
+        <div class="card">
+          <h3 style="margin-top:0">Let's connect</h3>
+          <p>Email: <a href="mailto:pradyu.kavuri@gmail.com">pradyu.kavuri@gmail.com</a></p>
+          <p>LinkedIn: <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/maruthi-kavuri-88a889357/">linkedin.com/in/maruthi-kavuri-88a889357</a></p>
+          <p>GitHub: <a target="_blank" rel="noreferrer" href="#" onclick="alert('Replace with your GitHub profile link!')">github.com/your‑username</a></p>
+        </div>
+        <div class="card">
+          <form onsubmit="event.preventDefault(); window.location.href='mailto:pradyu.kavuri@gmail.com?subject=Portfolio%20Inquiry&body='+encodeURIComponent(document.getElementById('msg').value)">
+            <label for="msg" style="display:block; margin:0 0 8px">Quick message</label>
+            <textarea id="msg" placeholder="Hi Maruthi, I saw your portfolio and ..."></textarea>
+            <button class="btn send" type="submit">Send Email</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">© <span id="year"></span> Maruthi Kavuri • Built with HTML/CSS/JS • Dark‑Neon theme</div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple stars / particles background
+    (function(){
+      const c = document.getElementById('stars');
+      const ctx = c.getContext('2d');
+      let w, h, dpr;
+      const stars = [];
+      function resize(){
+        dpr = window.devicePixelRatio || 1; w = c.width = innerWidth * dpr; h = c.height = innerHeight * dpr; c.style.width = innerWidth+'px'; c.style.height = innerHeight+'px';
+        ctx.scale(dpr, dpr);
+      }
+      function spawn(n=100){
+        for(let i=0;i<n;i++){
+          stars.push({x:Math.random()*innerWidth, y:Math.random()*innerHeight, r:Math.random()*1.8+0.2, vx:(Math.random()-.5)*0.2, vy:(Math.random()-.5)*0.2, hue: [180, 300, 135][(Math.random()*3)|0]});
+        }
+      }
+      function step(){
+        ctx.clearRect(0,0,innerWidth,innerHeight);
+        for(const s of stars){
+          s.x+=s.vx; s.y+=s.vy; if(s.x<0||s.x>innerWidth) s.vx*=-1; if(s.y<0||s.y>innerHeight) s.vy*=-1;
+          const g = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r*8);
+          const neon = `hsla(${s.hue}, 100%, 60%, `; // cyan/magenta/green variants
+          g.addColorStop(0, neon+".9)");
+          g.addColorStop(1, neon+"0)");
+          ctx.fillStyle = g;
+          ctx.beginPath(); ctx.arc(s.x, s.y, s.r*3, 0, Math.PI*2); ctx.fill();
+        }
+        requestAnimationFrame(step);
+      }
+      resize(); spawn(140); step();
+      addEventListener('resize', resize);
+    })();
+
+    // OPTIONAL: Projects data model (for easy future edits)
+    // Replace or extend this array, then call renderProjects(projects)
+    const projects = [
+      {
+        title: 'AccessEase (VHACK)',
+        desc: 'Prototype app improving digital accessibility with quick‑toggle readability features.',
+        stack: ['JavaScript','HTML/CSS','Hackathon'],
+        repo: '#', demo: '#'
+      },
+      {
+        title: 'Memory Tracker',
+        desc: 'Searchable journaling prototype that tags entries by mood/keywords for fast recall.',
+        stack: ['Python','Flask','SQLite'],
+        repo: '#', demo: '#'
+      },
+      {
+        title: 'Swim Pace Visualizer',
+        desc: 'Web tool to visualize 25/50 splits and target pace using animated lane LEDs.',
+        stack: ['JavaScript','Canvas'],
+        repo: '#', demo: '#'
+      }
+    ];
+
+    function renderProjects(list){
+      const grid = document.getElementById('projectGrid');
+      if(!grid) return;
+      grid.innerHTML = list.map(p => `
+        <article class=\"proj\">
+          <div class=\"thumb\" role=\"img\" aria-label=\"${p.title} thumbnail\"></div>
+          <div class=\"body\">
+            <h4>${p.title}</h4>
+            <p>${p.desc}</p>
+            <div class=\"stack\">${p.stack.map(s=>`<span>${s}</span>`).join('')}</div>
+            <div class=\"actions\">
+              <a class=\"btn-mini primary\" ${p.repo && p.repo!=='#' ? `href=\"${p.repo}\" target=\"_blank\" rel=\"noreferrer\"` : `href=\"#\" onclick=\"alert('Add your GitHub repo link!')\"`}>GitHub</a>
+              <a class=\"btn-mini\" ${p.demo && p.demo!=='#' ? `href=\"${p.demo}\" target=\"_blank\" rel=\"noreferrer\"` : `href=\"#\" onclick=\"alert('Add your live demo link!')\"`}>Live Demo</a>
+            </div>
+          </div>
+        </article>`).join('');
+    }
+    // Uncomment to use data-driven rendering instead of static cards above
+    // renderProjects(projects);
+  </script>
+</body>
 </html>
