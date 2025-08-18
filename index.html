@@ -1,243 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maruthi Kavuri – Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    /* ====== GLOBAL ====== */
-    body {
-      margin: 0;
-      font-family: 'Exo 2', sans-serif;
-      background: #0a0a0a;
-      color: #e0e0e0;
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-    }
-    h1, h2, h3 {
-      font-family: 'Orbitron', sans-serif;
-      letter-spacing: 1px;
-    }
-    a { text-decoration: none; color: inherit; }
-
-    /* ====== BACKGROUND PARTICLES ====== */
-    #particles-js {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      background: #0a0a0a;
-      top: 0; left: 0;
-      z-index: -1;
-    }
-
-    /* ====== HEADER ====== */
-    header {
-      text-align: center;
-      padding: 5rem 1rem 3rem;
-    }
-    header h1 {
-      font-size: 3rem;
-      background: linear-gradient(90deg, #00fff7, #ff00ff, #39ff14);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    header p { font-size: 1.2rem; color: #aaa; }
-
-    .buttons a {
-      margin: 0.5rem;
-      display: inline-block;
-      padding: 0.7rem 1.5rem;
-      border: 2px solid #00fff7;
-      border-radius: 8px;
-      color: #00fff7;
-      transition: all 0.3s ease;
-      font-weight: bold;
-    }
-    .buttons a:hover {
-      background: #00fff7;
-      color: #0a0a0a;
-      box-shadow: 0 0 15px #00fff7;
-    }
-
-    /* ====== SECTIONS ====== */
-    section { padding: 4rem 10%; }
-    section h2 {
-      font-size: 2rem;
-      color: #ff00ff;
-      border-bottom: 2px solid #00fff7;
-      display: inline-block;
-      margin-bottom: 1.5rem;
-    }
-    .divider {
-      border-top: 1px solid #00fff7;
-      margin: 2rem 0;
-    }
-
-    /* ====== CARDS ====== */
-    .card {
-      background: #141414;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 0 10px #00fff7;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px #ff00ff;
-    }
-
-    /* ====== PROJECTS ====== */
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    .project-card h3 { color: #39ff14; }
-    .badges span {
-      display: inline-block;
-      margin: 0.3rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 5px;
-      background: #00fff7;
-      color: #0a0a0a;
-      font-size: 0.8rem;
-    }
-    .button-link {
-      margin-top: 0.8rem;
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      background: #ff00ff;
-      color: #0a0a0a;
-      font-weight: bold;
-      border-radius: 6px;
-      transition: 0.3s;
-    }
-    .button-link:hover {
-      background: #39ff14;
-      box-shadow: 0 0 10px #39ff14;
-    }
-
-    /* ====== CONTACT ====== */
-    .contact-icons a {
-      margin: 0 1rem;
-      font-size: 1.5rem;
-      color: #00fff7;
-      transition: color 0.3s ease, text-shadow 0.3s ease;
-    }
-    .contact-icons a:hover {
-      color: #ff00ff;
-      text-shadow: 0 0 10px #ff00ff;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      border-top: 1px solid #00fff7;
-      font-size: 0.9rem;
-      color: #888;
-      margin-top: 3rem;
-    }
-  </style>
-</head>
-<body>
-  <!-- Background -->
-  <div id="particles-js"></div>
-
-  <!-- Home -->
-  <header id="home">
-    <h1>Maruthi Kavuri</h1>
-    <p>Student-Athlete & Aspiring Computer Scientist</p>
-    <div class="buttons">
-      <a href="#resume">See Resume</a>
-      <a href="#projects">View Projects</a>
-      <a href="mailto:pradyu.kavuri@gmail.com">Email Me</a>
-      <a href="https://www.linkedin.com/in/maruthi-kavuri-88a889357/" target="_blank">LinkedIn</a>
-    </div>
-  </header>
-
-  <!-- Resume -->
-  <section id="resume">
-    <h2>Resume</h2>
-    <div class="card">
-      <h3>Skills</h3>
-      <p>Java, Python, Project Management, Analytical Thinking, Communication, Teamwork</p>
-    </div>
-    <div class="card">
-      <h3>Experience</h3>
-      <p><strong>Harvard Summer Intern</strong> – Harvard John A. Paulson School of Engineering and Applied Sciences (Jul–Sep 2025)</p>
-      <ul>
-        <li>Built Doubridge AI Finance Agent to process .xlc files for enterprise finance.</li>
-        <li>Developed growth strategy to open new markets & scale revenue.</li>
-        <li>Worked across technical & business groups to improve flow and consistency.</li>
-      </ul>
-      <p><strong>Swim Instructor</strong> – Vernon Hills High School (2014–2017)</p>
-      <ul><li>Taught swimming and confidence-building to kids and young adults.</li></ul>
-      <p><strong>Hackathons & Activities</strong></p>
-      <ul>
-        <li>VHACK – Prototype on accessibility; learned grit, iteration, debugging.</li>
-        <li>Calico.CS (UC Berkeley) – AI/software workshops & community.</li>
-        <li>Project Developer & Programmer – Built sites/apps, mentored peers in AP CS.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Education</h3>
-      <p><strong>Vernon Hills High School – Vernon Hills, IL</strong><br>
-      Class of 2025 · GPA 3.9 (weighted) · 11+ AP courses<br>
-      AP CSA, AP Calculus BC, AP Physics, AP U.S. History, and more.</p>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <div class="card project-card">
-        <h3>Doubridge AI Finance Assistant</h3>
-        <p>AI-powered finance tool created at Harvard internship. Reads .xlc files and models strategies for corporate planning.</p>
-        <div class="badges"><span>Python</span><span>Pandas</span><span>Finance</span></div>
-        <a class="button-link" href="#" target="_blank">GitHub</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maruthi Kavuri – Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-black text-white font-[Orbitron]">
+    <!-- Home Section -->
+    <section class="min-h-screen flex flex-col items-center justify-center text-center px-6 relative overflow-hidden">
+      <h1 class="text-6xl font-extrabold bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-green-400 bg-clip-text text-transparent animate-pulse">
+        Maruthi Kavuri
+      </h1>
+      <p class="mt-4 text-lg text-gray-400">
+        Student‑Athlete & Aspiring Computer Scientist
+      </p>
+      <p class="mt-4 max-w-2xl text-gray-300">
+        Rising senior at Vernon Hills High School (IL). Varsity sprint freestyler and curious developer. I like shipping simple tools that solve real problems and leveling up one stroke, one commit at a time.
+      </p>
+      <div class="flex gap-6 mt-6 flex-wrap justify-center">
+        <a href="#projects" class="px-6 py-2 border border-cyan-400 rounded-xl hover:bg-cyan-400 hover:text-black transition">View Projects</a>
+        <a href="#resume" class="px-6 py-2 border border-fuchsia-500 rounded-xl hover:bg-fuchsia-500 hover:text-black transition">See Resume</a>
+        <a href="mailto:pradyu.kavuri@gmail.com" class="px-6 py-2 border border-green-400 rounded-xl hover:bg-green-400 hover:text-black transition">Email Me</a>
+        <a href="https://www.linkedin.com/in/maruthi-kavuri-88a889357/" target="_blank" class="px-6 py-2 border border-cyan-400 rounded-xl hover:bg-cyan-400 hover:text-black transition">LinkedIn</a>
+        <a href="https://www.swimcloud.com/swimmer/2333272/powerindex/" target="_blank" class="px-6 py-2 border border-green-400 rounded-xl hover:bg-green-400 hover:text-black transition">SwimCloud</a>
       </div>
-      <div class="card project-card">
-        <h3>VHACK Hackathon Project</h3>
-        <p>Prototype app focused on accessibility. Learned lessons in perseverance and collaboration.</p>
-        <div class="badges"><span>Prototype</span><span>Team Dev</span></div>
-        <a class="button-link" href="#" target="_blank">GitHub</a>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="px-6 md:px-20 py-20">
+      <h2 class="text-4xl font-bold text-center text-cyan-400 mb-12">Resume</h2>
+      <div class="space-y-16">
+        <div>
+          <h3 class="text-2xl font-semibold text-fuchsia-400 mb-4">Education</h3>
+          <p class="text-gray-300">Vernon Hills High School – Vernon Hills, IL</p>
+          <p class="text-gray-400">Class of 2025 · GPA 3.9 (weighted) · 11+ AP courses</p>
+          <p class="text-gray-500">AP CSA, AP Calculus BC, AP Physics, AP U.S. History, and more.</p>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-semibold text-fuchsia-400 mb-4">Experience & Activities</h3>
+          <ul class="space-y-6 text-gray-300">
+            <li>
+              <strong>Harvard Summer Intern</strong> – Harvard John A. Paulson School of Engineering and Applied Sciences (July 2025 – Sept 2025)<br />
+              Part of the technical team for Doubridge, created a model Financing Agent (uses .xlc files) to help larger companies with finance. Learned markets, entrepreneurship, and collaborated with groups for consistency and flow.
+            </li>
+            <li>
+              <strong>Swim Instructor</strong> – Vernon Hills High School (2014 – 2017)<br />
+              Taught kids and young adults how to swim and build confidence. Check my <a href="https://www.swimcloud.com/swimmer/2333272/powerindex/" target="_blank" class="text-green-400 hover:underline">SwimCloud profile</a> for performance stats.
+            </li>
+            <li>
+              <strong>Varsity Swimmer</strong> – Vernon Hills High School (2019 – Present)<br />
+              Sprint Freestyle training and competition. Time drops (50.6 in 100‑yard free). Built resilience and teamwork.
+            </li>
+            <li>
+              <strong>VHACK – Hackathon Participant</strong><br />
+              Accessibility‑focused prototype. Learned perseverance through iteration and debugging.
+            </li>
+            <li>
+              <strong>Calico.CS (UC Berkeley) – Workshops & Community</strong><br />
+              Expanded AI/software fundamentals and applied to personal projects.
+            </li>
+            <li>
+              <strong>Project Developer & Programmer</strong> (2019 – Present)<br />
+              Built websites, prototype apps, and competed in coding competitions. Mentored peers in AP CS concepts.
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="card project-card">
-        <h3>Calico CS Challenges</h3>
-        <p>Worked on algorithmic coding problems and collaborative sessions at UC Berkeley’s Calico platform.</p>
-        <div class="badges"><span>Algorithms</span><span>AI</span></div>
-        <a class="button-link" href="#" target="_blank">GitHub</a>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="px-6 md:px-20 py-20 bg-gray-900/40">
+      <h2 class="text-4xl font-bold text-center text-green-400 mb-12">Projects</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div class="bg-gray-800/70 rounded-2xl p-6 hover:scale-105 transition transform border border-cyan-400">
+          <h3 class="text-xl font-bold mb-2">Doubridge AI Finance Assistant</h3>
+          <p class="text-gray-400 mb-4">Model Financing Agent (.xlc files) to help large companies with finance.</p>
+          <span class="text-xs text-cyan-400">Python · Flask · AI</span>
+        </div>
+        <div class="bg-gray-800/70 rounded-2xl p-6 hover:scale-105 transition transform border border-fuchsia-500">
+          <h3 class="text-xl font-bold mb-2">AccessEase (VHACK)</h3>
+          <p class="text-gray-400 mb-4">Prototype app improving digital accessibility with quick‑toggle readability features.</p>
+          <span class="text-xs text-fuchsia-400">JavaScript · HTML/CSS · Hackathon</span>
+        </div>
+        <div class="bg-gray-800/70 rounded-2xl p-6 hover:scale-105 transition transform border border-green-400">
+          <h3 class="text-xl font-bold mb-2">Memory Tracker</h3>
+          <p class="text-gray-400 mb-4">Searchable journaling prototype tagging entries by mood/keywords for fast recall.</p>
+          <span class="text-xs text-green-400">Python · Flask · SQLite</span>
+        </div>
+        <div class="bg-gray-800/70 rounded-2xl p-6 hover:scale-105 transition transform border border-cyan-400">
+          <h3 class="text-xl font-bold mb-2">Swim Pace Visualizer</h3>
+          <p class="text-gray-400 mb-4">Web tool to visualize 25/50 splits and target pace using animated lane LEDs.</p>
+          <span class="text-xs text-cyan-400">Web · Visualization</span>
+        </div>
+        <div class="bg-gray-800/70 rounded-2xl p-6 hover:scale-105 transition transform border border-fuchsia-500">
+          <h3 class="text-xl font-bold mb-2">Mobile Fitness Studio</h3>
+          <p class="text-gray-400 mb-4">A mobile app concept designed for tracking fitness workouts and personalized training plans.</p>
+          <span class="text-xs text-fuchsia-400">React Native · Mobile App</span>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="card contact-icons">
-      <a href="mailto:pradyu.kavuri@gmail.com">✉️</a>
-      <a href="https://github.com/" target="_blank">🐙</a>
-      <a href="https://www.linkedin.com/in/maruthi-kavuri-88a889357/" target="_blank">💼</a>
-    </div>
-  </section>
+    <!-- Contact Section -->
+    <section id="contact" class="px-6 md:px-20 py-20 text-center">
+      <h2 class="text-4xl font-bold text-cyan-400 mb-6">Contact</h2>
+      <div class="flex justify-center gap-8 flex-wrap">
+        <a href="https://github.com/MaruthiKavuri" target="_blank" class="hover:text-cyan-400">GitHub</a>
+        <a href="https://www.linkedin.com/in/maruthi-kavuri-88a889357/" target="_blank" class="hover:text-fuchsia-500">LinkedIn</a>
+        <a href="mailto:pradyu.kavuri@gmail.com" class="hover:text-green-400">Email</a>
+        <a href="https://www.swimcloud.com/swimmer/2333272/powerindex/" target="_blank" class="hover:text-green-400">SwimCloud</a>
+      </div>
+    </section>
 
-  <footer>&copy; 2025 Maruthi P. Kavuri — Dark Neon Portfolio</footer>
-
-  <!-- Scripts for Particles.js -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script>
-    particlesJS("particles-js", {
-      "particles": {
-        "number": { "value": 100 },
-        "size": { "value": 3 },
-        "move": { "speed": 2 },
-        "line_linked": { "enable": true, "color": "#00fff7" },
-        "color": { "value": ["#00fff7", "#ff00ff", "#39ff14"] }
-      }
-    });
-  </script>
-</body>
+    <footer class="p-6 text-center text-gray-500 border-t border-gray-700">
+      © <script>document.write(new Date().getFullYear())</script> Maruthi Kavuri. Built with ❤️
+    </footer>
+  </body>
 </html>
